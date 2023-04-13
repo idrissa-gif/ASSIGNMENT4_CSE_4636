@@ -29,9 +29,6 @@
         <li class="nav-item">
             <a class="nav-link" href="highest-cgpa.jsp">Highest CGPA</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="update-student.jsp">Update Student</a>
-        </li>
     </ul>
     <table class="table mt-3">
         <thead class="thead-dark">
@@ -40,6 +37,7 @@
             <th scope="col">Name</th>
             <th scope="col">Semester</th>
             <th scope="col">CGPA</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -50,6 +48,15 @@
                 <td>${student.name}</td>
                 <td>${student.semester}</td>
                 <td>${student.cgpa}</td>
+                <td>
+                    <form method="post" action="http://localhost:8080/CSE4636_ASSIGNMENT4-1.0-SNAPSHOT/update-student.jsp">
+                        <input name="studentId" value="${student.studentId}" hidden="hidden">
+                        <input name="name" value="${student.name}" hidden="hidden">
+                        <input name="semester" value="${student.semester}" hidden="hidden">
+                        <input name="cgpa" value="${student.cgpa}" hidden="hidden">
+                        <input type="submit" value="Update" class="btn btn-primary" >
+                    </form>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

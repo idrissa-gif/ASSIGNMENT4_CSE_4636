@@ -19,9 +19,6 @@
         <li class="nav-item">
             <a class="nav-link" href="highest-cgpa.jsp">Highest CGPA</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="update-student.jsp">Update Student</a>
-        </li>
     </ul>
     <form action="http://localhost:8080/CSE4636_ASSIGNMENT4-1.0-SNAPSHOT/api/Stateless/student/add" method="post">
         <div class="form-group">

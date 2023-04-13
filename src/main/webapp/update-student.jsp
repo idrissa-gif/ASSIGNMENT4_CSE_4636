@@ -28,26 +28,23 @@
     <li class="nav-item">
       <a class="nav-link" href="highest-cgpa.jsp">Highest CGPA</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="update-student.jsp">Update Student</a>
-    </li>
   </ul>
   <form action="updateStudent" method="post" class="mt-3">
     <div class="form-group">
       <label for="studentId">Student ID:</label>
-      <input type="text" class="form-control" id="studentId" name="studentId" disabled>
+      <input type="text" class="form-control" id="studentId" name="studentId" value="<%= request.getParameter("studentId")%>" disabled>
     </div>
     <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name" name="name" required>
+      <input type="text" class="form-control" id="name" name="name" value="<%=request.getParameter("name")%>" required>
     </div>
     <div class="form-group">
       <label for="semester">Semester:</label>
-      <input type="number" class="form-control" id="semester" name="semester" required>
+      <input type="number" class="form-control" id="semester" name="semester" value="<%=request.getParameter("semester")%>" required>
     </div>
     <div class="form-group">
       <label for="cgpa">CGPA:</label>
-      <input type="number" step="0.01" class="form-control" id="cgpa" name="cgpa" required>
+      <input type="number" step="0.01" class="form-control" id="cgpa" name="cgpa" value="<%=request.getParameter("cgpa")%>" required>
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
   </form>

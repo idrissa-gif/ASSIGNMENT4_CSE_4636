@@ -14,6 +14,17 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<ul class="nav nav-tabs mt-3">
+    <li class="nav-item">
+        <a class="nav-link" href="add-student.jsp">Add Student</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="find-student.jsp">Find Student</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="highest-cgpa.jsp">Highest CGPA</a>
+    </li>
+</ul>
 <div class="container mt-4">
     <h1>Student Comparison</h1>
     <form>
