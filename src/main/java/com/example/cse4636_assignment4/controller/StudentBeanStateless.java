@@ -1,14 +1,19 @@
 package com.example.cse4636_assignment4.controller;
 
 import com.example.cse4636_assignment4.Repository.StudentRepository;
-import com.example.cse4636_assignment4.Service.AddStudent;
 import com.example.cse4636_assignment4.model.Student;
 
 import javax.ejb.Stateless;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.Null;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 
@@ -17,29 +22,44 @@ import java.net.URL;
 public class StudentBeanStateless {
 
     private StudentRepository studentRepository = new StudentRepository(); // Inject the service to handle database operations
-    private AddStudent addStudent = new AddStudent();
+
     @POST
     @Path("/add")
     @Produces(MediaType.TEXT_HTML)
     public Response addStudent(@FormParam("name") String name, @FormParam("semester") int semester, @FormParam("cgpa") double cgpa) {
         Student student = new Student(name, semester, cgpa);
 
-        boolean check = addStudent.AddToStudentList(student); // Call the service to add student to the database
+        studentRepository.add(student); // Call the service to add student to the database
 
         // Redirect to index.jsp after adding student
-        if(check) {
-            URI uri = UriBuilder.fromUri("/index").build();
-            return Response.seeOther(uri).build();
-        }
-        URI uri = UriBuilder.fromUri("add-student.jsp").build();
-        return Response.seeOther(uri).build();
+        URI uri = UriBuilder.fromUri("http://localhost:8080/CSE4636_ASSIGNMENT4-1.0-SNAPSHOT/").build();
+        return  Response.seeOther(uri).build();
+
+    }
+
+    @POST
+    @Path("/add/UsingQueryParam")
+    @Produces(MediaType.TEXT_HTML)
+    public Response addStudentUsingParamQuery(@QueryParam("name") String name, @QueryParam("semester") int semester, @QueryParam("cgpa") double cgpa) {
+        Student student = new Student(name, semester, cgpa);
+
+        studentRepository.add(student); // Call the service to add student to the database
+
+        // Redirect to index.jsp after adding student
+        URI uri = UriBuilder.fromUri("http://localhost:8080/CSE4636_ASSIGNMENT4-1.0-SNAPSHOT/").build();
+        return  Response.seeOther(uri).build();
+
     }
 
     @GET
-    @Path("/{studentId}")
+    @Path("/find/{studentId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getStudentName(@PathParam("studentId") Long StId) {
-        Student student = studentRepository.find(StId); // Call the service to get student name from the database
+
+    public Response getStudentInfo(@PathParam("studentId") Long studentId){
+
+        // Create a Student object with retrieved student details
+        Student student = studentRepository.find(studentId);
+        System.out.println(student.getStudentId()+" "+student.getName()+" "+student.getSemester()+" "+student.getCgpa());
         return Response.ok(student).build();
     }
 
