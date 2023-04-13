@@ -64,6 +64,7 @@ public class StudentBeanStateless {
     }
 
     @GET
+    @Path("/compareCgpa")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getStudentWithHigherCgpa(
             @QueryParam("studentId1") long studentId1,
