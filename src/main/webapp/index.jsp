@@ -19,17 +19,9 @@
 <div class="container mt-5">
     <h1>Welcome to Student List</h1>
     <p>This is a list of students in the system.</p>
-    <ul class="nav nav-tabs mt-3">
-        <li class="nav-item">
-            <a class="nav-link" href="add-student.jsp">Add Student</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="find-student.jsp">Find Student</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="highest-cgpa.jsp">Highest CGPA</a>
-        </li>
-    </ul>
+    <div>
+        <jsp:include page="options.jsp"/>
+    </div>
     <table class="table mt-3">
         <thead class="thead-dark">
         <tr>

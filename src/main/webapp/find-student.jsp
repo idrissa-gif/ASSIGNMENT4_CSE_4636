@@ -7,17 +7,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<ul class="nav nav-tabs mt-3">
-    <li class="nav-item">
-        <a class="nav-link" href="add-student.jsp">Add Student</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="find-student.jsp">Find Student</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="highest-cgpa.jsp">Highest CGPA</a>
-    </li>
-</ul>
+<div >
+    <jsp:include page="options.jsp"/>
+</div>
 <div class="container mt-5">
     <h1 class="mb-4">Find Student</h1>
     <form id="findStudentForm">

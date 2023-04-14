@@ -43,7 +43,7 @@ public class Student {
         return studentId;
     }
 
-    public void setStudentId(int studentId) {
+    public void setStudentId(Long studentId) {
         this.studentId = studentId;
     }
 

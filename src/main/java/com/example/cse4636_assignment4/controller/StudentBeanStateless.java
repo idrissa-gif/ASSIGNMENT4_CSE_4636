@@ -81,16 +81,19 @@ public class StudentBeanStateless {
         }
     }
 
-    @PUT
+    @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Path("/update")
     public Response updateStudentName(
-            @QueryParam("studentId") Long studentId,
-            @QueryParam("name") String name
+            @FormParam("studentId") Long studentId,
+            @FormParam("name") String name,
+            @FormParam("semester") int semester,
+            @FormParam("cgpa") float cgpa
     ) {
-        Student student = studentRepository.findById(studentId);
-        student.setName(name);
+        Student student = new Student(studentId,name,semester,cgpa);
         studentRepository.update(student); // Call the service to update student name in the database
-        return Response.ok().build();
+        URI uri = UriBuilder.fromUri("http://localhost:8080/CSE4636_ASSIGNMENT4-1.0-SNAPSHOT/").build();
+        return  Response.seeOther(uri).build();
     }
 }
 
