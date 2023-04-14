@@ -11,6 +11,7 @@ student entry with the given values into your backend database.
 ADDED SUCCESSFULLY 
 
 <img width="1440" alt="Screenshot 2023-04-14 at 15 47 46" src="https://user-images.githubusercontent.com/76502860/232010516-2a0d5cde-2460-4789-8269-7b75559d6968.png">
+<img width="1440" alt="Screenshot 2023-04-14 at 15 52 49" src="https://user-images.githubusercontent.com/76502860/232011737-ae7e6826-1da5-4749-a70c-6cc4c88b77cb.png">
 
 • Given a student ID as a path parameter, return the name of the student. This information should come from the backend database.
 
@@ -23,3 +24,15 @@ Given the student IDs of 2 different students as query parameters, return the st
 <img width="1440" alt="Screenshot 2023-04-14 at 15 50 27" src="https://user-images.githubusercontent.com/76502860/232011117-42a92f26-4837-4798-a38c-e82f22fd5b29.png">
 
 <img width="1440" alt="Screenshot 2023-04-14 at 15 51 20" src="https://user-images.githubusercontent.com/76502860/232011330-0b5031f3-a806-4fc8-bd86-ee1e36a359db.png">
+
+• Given the student ID and name as query parameters, update the name of the student with the name given in the query parameter. This change should be reflected in the backend database.
+
+<img width="1440" alt="Screenshot 2023-04-14 at 15 55 17" src="https://user-images.githubusercontent.com/76502860/232012324-a9b3c117-ce6c-421e-b7e5-e7d6880c5009.png">
+
+
+<img width="1440" alt="Screenshot 2023-04-14 at 15 54 14" src="https://user-images.githubusercontent.com/76502860/232012103-83a0005a-7a4a-43af-a2bf-30744e48850f.png">
+
+<img width="1440" alt="Screenshot 2023-04-14 at 15 55 57" src="https://user-images.githubusercontent.com/76502860/232012495-b217796d-1901-4249-8aa4-38cd7e7f034d.png">
+
+<img width="1440" alt="Screenshot 2023-04-14 at 15 56 46" src="https://user-images.githubusercontent.com/76502860/232012811-394c11f0-c837-4519-b702-cc74cafe7fa5.png">
+
