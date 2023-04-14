@@ -9,17 +9,10 @@
 <body>
 <div class="container mt-5">
     <h1>Add Student</h1>
-    <ul class="nav nav-tabs mt-3">
-        <li class="nav-item">
-            <a class="nav-link" href="add-student.jsp">Add Student</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="find-student.jsp">Find Student</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="highest-cgpa.jsp">Highest CGPA</a>
-        </li>
-    </ul>
+    <div>
+        <jsp:include page="options.jsp"/>
+    </div>
+
     <form action="http://localhost:8080/CSE4636_ASSIGNMENT4-1.0-SNAPSHOT/api/Stateless/student/add" method="post">
         <div class="form-group">
             <label for="name">Name:</label>

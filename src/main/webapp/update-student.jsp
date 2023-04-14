@@ -18,21 +18,13 @@
 <div class="container mt-5">
   <h1>Update Student</h1>
   <p>Update the information of a student.</p>
-  <ul class="nav nav-tabs mt-3">
-    <li class="nav-item">
-      <a class="nav-link" href="add-student.jsp">Add Student</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="find-student.jsp">Find Student</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="highest-cgpa.jsp">Highest CGPA</a>
-    </li>
-  </ul>
-  <form action="updateStudent" method="post" class="mt-3">
+  <div>
+    <jsp:include page="options.jsp"/>
+  </div>
+  <form action="http://localhost:8080/CSE4636_ASSIGNMENT4-1.0-SNAPSHOT/api/Stateless/student/update" method="post" class="mt-3">
     <div class="form-group">
       <label for="studentId">Student ID:</label>
-      <input type="text" class="form-control" id="studentId" name="studentId" value="<%= request.getParameter("studentId")%>" disabled>
+      <input type="text" class="form-control" id="studentId" name="studentId" value="<%= request.getParameter("studentId")%>" aria-hidden="false">
     </div>
     <div class="form-group">
       <label for="name">Name:</label>

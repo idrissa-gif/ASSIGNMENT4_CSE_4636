@@ -33,20 +33,6 @@ public class StudentRepository {
         return entityManager.find(Student.class, id);
     }
 
-    public Student findById(Long id) {
-        Query query = entityManager.createNamedQuery("find student by id");
-        query.setParameter("id", id);
-        return (Student) query.getSingleResult();
-    }
-
-    public Student updateFirstNameById(String name, Long id) {
-        entityManager.getTransaction().begin();
-        Query query = entityManager.createQuery("Update Student set name = '"+ name + "' where id = " + id );
-        query.executeUpdate();
-        entityManager.getTransaction().commit();
-        entityManager.clear();
-        return findById(id);
-    }
 
 
     public void deleteById(Long id) {
@@ -56,8 +42,9 @@ public class StudentRepository {
         entityManager.getTransaction().commit();
     }
 
-    public List<Student> findByNameStartWith(String keyword) {
-        Query query = entityManager.createQuery("Select s from Student s where s.name like '" + keyword + "%'");
+    public List<Student> findTheHighestCgpa() {
+
+       Query query = entityManager.createQuery("SELECT s FROM Student s ORDER BY s.cgpa DESC");
         return query.getResultList();
     }
 
@@ -67,19 +54,13 @@ public class StudentRepository {
         return query.getResultList();
     }
 
-    public Long count() {
-        Query query = entityManager.createQuery("Select count(s) from Student s");
-        return (Long) query.getSingleResult();
-    }
 
-    public Student update(Student student) {
-        Student studentToUpdate = find(student.getStudentId());
+
+    public void update(Student student) {
         entityManager.getTransaction().begin();
-        studentToUpdate.setName(student.getName());
-        studentToUpdate.setSemester(student.getSemester());
-        studentToUpdate.setCgpa(student.getCgpa());
+        Query query = entityManager.createQuery("Update Student set name = '"+ student.getName() + "', semester = "+student.getSemester()+", cgpa = "+student.getCgpa()+" where studentId = "+student.getStudentId()+"");
+        query.executeUpdate();
         entityManager.getTransaction().commit();
-        return studentToUpdate;
     }
 
     public void delete(Student student) {
