@@ -33,3 +33,10 @@ Given the student IDs of 2 different students as query parameters, return the st
 
 <img width="1440" alt="Screenshot 2023-04-14 at 15 56 46" src="https://user-images.githubusercontent.com/76502860/232012811-394c11f0-c837-4519-b702-cc74cafe7fa5.png">
 
+Create a RESTful endpoint through a singleton session bean that will always return the
+name and ID of the student with the highest cgpa. This information should come from
+the backend database.
+
+<img width="1440" alt="Screenshot 2023-04-14 at 16 02 50" src="https://user-images.githubusercontent.com/76502860/232014804-4b13bac2-a7f5-4632-ba9f-ede9fb1130df.png">
+
+<img width="1440" alt="Screenshot 2023-04-14 at 16 03 12" src="https://user-images.githubusercontent.com/76502860/232014912-1893fb2e-18f1-410d-95a5-47d7f1c4b398.png">
