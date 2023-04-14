@@ -29,8 +29,8 @@ Given the student IDs of 2 different students as query parameters, return the st
 
 <img width="1440" alt="Screenshot 2023-04-14 at 15 55 17" src="https://user-images.githubusercontent.com/76502860/232012324-a9b3c117-ce6c-421e-b7e5-e7d6880c5009.png">
 
+<img width="1440" alt="Screenshot 2023-04-14 at 16 00 08" src="https://user-images.githubusercontent.com/76502860/232014180-fb7602fe-cb20-4f51-9fc8-facd68f6d2f1.png">
 
-<img width="1440" alt="Screenshot 2023-04-14 at 15 54 14" src="https://user-images.githubusercontent.com/76502860/232012103-83a0005a-7a4a-43af-a2bf-30744e48850f.png">
 
 <img width="1440" alt="Screenshot 2023-04-14 at 15 55 57" src="https://user-images.githubusercontent.com/76502860/232012495-b217796d-1901-4249-8aa4-38cd7e7f034d.png">
 
